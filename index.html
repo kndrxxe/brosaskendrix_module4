@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Home</title>
+    <link rel="icon" href="kb.png" type="image/x-icon">
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+      body {
+          font-family: 'Poppins', sans-serif;
+      }
+  </style>
+    <script>
+      let list = "";
+      fetch("users.json")
+        .then((response) => response.json())
+        .then((json) => {
+          json.forEach((todo) => {
+            list += `<tr><td><strong>${todo.id}</strong></td><td><strong>${todo.name}</strong></td><td><i>"${todo.username}"</i></td><td>${todo.email}</td><td><i>${todo.address.street} - ${todo.address.suite}, ${todo.address.city} (${todo.address.zipcode})</i></td><td><b>${todo.phone}</b></td><td>${todo.website}</td><td><strong>${todo.company.name}</strong><br><i><b>"${todo.company.catchPhrase}"</b></i><br><i>"${todo.company.bs}"</i></td></tr>
+				`;
+          });
+          document.querySelector("tbody").innerHTML = list;
+        });
+    </script>
+  </head>
+  <body>
+    <div class="container">
+      <header
+        class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom"
+      >
+        <div class="col-md-3 mb-2 mb-md-0">
+          <img src="kb.png" width="40" />
+        </div>
+        <div class="col-md-3 text-end">
+          <ul
+            class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0"
+          >
+            <li><a href="#" class="nav-link px-2 link-secondary"><i class="bi bi-house fs-2"></i></a></li>
+            <li><a href="gallery.html" class="nav-link px-2 link-dark"><i class="bi bi-images fs-2"></i></a></li>
+            <li><a href="about.html" class="nav-link px-2 link-dark"><i class="bi bi-info-circle fs-2"></i></a></li>
+          </ul>
+        </div>
+      </header>
+    </div>
+	<h1 class="display-2 text-center">
+			LIST OF USERS
+		</h1>
+    <div class="container table-responsive">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Name</th>
+            <th scope="col">Username</th>
+            <th scope="col">E-mail</th>
+            <th scope="col">Address</th>
+            <th scope="col">Phone</th>
+            <th scope="col">Website</th>
+            <th scope="col">Company</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">1</th>
+            <td></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

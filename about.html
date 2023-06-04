@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>About</title>
+    <link rel="icon" href="kb.png" type="image/x-icon" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+    </style>
+    <script>
+      let list = "";
+      fetch("photos.json")
+        .then((response) => response.json())
+        .then((json) => {
+          json.forEach((todo) => {
+            list += ` 
+                    <div class="card shadow-sm">
+                        <div class="card-body">
+                            <img src="${todo.thumbnailUrl}" width="100%" />
+                               <p class="card-text text-center"><strong>${todo.title}</strong></p>
+                        </div>
+                    </div>
+				`;
+          });
+          document.querySelector(".row").innerHTML = list;
+        });
+    </script>
+  </head>
+  <body>
+    <div class="container">
+      <header
+        class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom"
+      >
+        <div class="col-md-3 mb-2 mb-md-0">
+          <img src="kb.png" width="40" />
+        </div>
+        <div class="col-md-3 text-end">
+          <ul
+            class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0"
+          >
+            <li>
+              <a href="index.html" class="nav-link px-2 link-dark"><i class="bi bi-house fs-2"></i></a>
+            </li>
+            <li>
+              <a href="gallery.html" class="nav-link px-2 link-dark"><i class="bi bi-images fs-2"></i></a>
+            </li>
+            <li>
+              <a href="#" class="nav-link px-2 link-secondary"><i class="bi bi-info-circle fs-2"></i></a>
+            </li>
+          </ul>
+        </div>
+      </header>
+      <h1 class="display-1 text-center">ABOUT</h1>
+      <p class="text-center fst-italic">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec mollis
+        ultricies risus, vel condimentum lorem. Praesent aliquet ipsum diam, at
+        luctus ipsum tincidunt eu. Phasellus orci nibh, varius ut justo sodales,
+        blandit lacinia justo. In hac habitasse platea dictumst. Ut a ultrices
+        eros. In tellus urna, porttitor a justo ac, fringilla convallis ex. In
+        hac habitasse platea dictumst. Vestibulum tincidunt turpis vel mattis
+        semper. Sed nec congue urna, ut rhoncus ipsum. Quisque iaculis rutrum
+        felis sed mollis. Nam aliquam sagittis leo vitae varius. Duis in dictum
+        purus. Aenean at tortor nibh. Nullam efficitur faucibus erat quis
+        laoreet. Duis a diam convallis diam tempus pellentesque vitae vitae
+        elit.
+      </p>
+      <br />
+      <hr>
+      <h1 class="display-4 text-center">MISSION</h1>
+      <p class="text-center fst-italic">
+        Integer consectetur semper eros faucibus fermentum. Aliquam condimentum
+        purus purus, at condimentum turpis tincidunt et. Aliquam sollicitudin,
+        ex non finibus lacinia, nisl mi posuere elit, non interdum ex ipsum ac
+        nisi. Suspendisse in consequat neque. Duis ultricies lacinia egestas.
+        Morbi pharetra nec elit sed sollicitudin. Quisque finibus mauris sem,
+        vitae pulvinar lectus pharetra eget. Duis viverra odio viverra, aliquet
+        neque eu, lobortis sapien. Aenean sollicitudin hendrerit nisl, quis
+        porta metus finibus non. Curabitur in nisl pellentesque, sollicitudin
+        odio sed, convallis nibh. Duis auctor, diam in fermentum fringilla,
+        ipsum justo auctor leo, et vestibulum mauris est eget ex. Fusce a arcu
+        ligula. Aliquam sed fermentum mauris. Etiam in semper augue, sed
+        malesuada mauris. Quisque augue lacus, posuere non dolor a, imperdiet
+        dictum ipsum.
+      </p>
+      <br />
+      <hr>
+      <h1 class="display-4 text-center">VISION</h1>
+      <p class="text-center fst-italic">
+        Donec a euismod orci. Class aptent taciti sociosqu ad litora torquent
+        per conubia nostra, per inceptos himenaeos. Aliquam condimentum felis ac
+        est porta maximus. Quisque vitae erat vitae magna tincidunt faucibus.
+        Phasellus mattis maximus dui, ornare egestas turpis varius sed.
+        Curabitur placerat quam a tristique consectetur. Sed interdum, massa non
+        facilisis tristique, diam neque dictum ligula, ac rutrum justo urna a
+        nunc. Aenean laoreet molestie mauris a tempus. Nulla congue malesuada
+        massa, sollicitudin placerat mi molestie vel. Mauris scelerisque eget
+        elit vel suscipit. Aliquam justo metus, sollicitudin non tortor non,
+        congue semper lorem. Cras gravida nunc vitae euismod posuere.
+      </p>
+      <br />
+      <hr>
+      <h1 class="display-4 text-center">OBJECTIVES</h1>
+      <p class="text-center fst-italic">
+        Vestibulum commodo, sem vitae convallis fringilla, sapien ligula
+        pellentesque lectus, a pharetra augue dolor eget elit. Sed vulputate
+        porta nulla quis posuere. Aenean sed mauris a tortor mollis egestas id
+        in tellus. Praesent lobortis eleifend erat a convallis. Phasellus
+        tincidunt, dui vitae consequat rhoncus, odio est efficitur enim, ut
+        eleifend lacus neque id enim. Duis a nulla laoreet, sagittis purus id,
+        interdum tellus. Etiam sagittis nulla quis ex pellentesque, at tincidunt
+        risus lacinia. Praesent at congue tellus, ut porta purus. Vivamus vitae
+        facilisis mi, sed viverra enim. Praesent vehicula, leo id imperdiet
+        rhoncus, eros lacus molestie enim, id mattis metus purus at sem.
+        Phasellus molestie a quam lobortis ultrices.
+      </p>
+      <br />
+      <hr>
+      <h1 class="display-4 text-center">GOALS</h1>
+      <p class="text-center fst-italic">
+        Donec quis nulla nec ex laoreet lacinia. Duis eget nisi diam. Donec nec
+        nulla laoreet, tincidunt ante vel, elementum libero. Nullam at erat
+        orci. Class aptent taciti sociosqu ad litora torquent per conubia
+        nostra, per inceptos himenaeos. Sed ac pellentesque metus. Pellentesque
+        arcu metus, euismod nec vulputate in, luctus at erat. Quisque ornare
+        convallis quam, quis porta erat pretium in. Vestibulum arcu lectus,
+        efficitur quis ipsum in, feugiat molestie arcu. Sed ultrices lobortis
+        hendrerit. Pellentesque sed turpis et urna pretium molestie. Mauris
+        maximus felis et nisi euismod, eget dignissim magna auctor. Fusce quis
+        ex non massa scelerisque convallis. Etiam suscipit gravida pulvinar. Ut
+        eget vestibulum massa. Nam mauris risus, gravida sed tempor ac, rutrum
+        at felis.
+      </p>
+    </div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
